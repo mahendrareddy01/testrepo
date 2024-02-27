@@ -1,0 +1,80 @@
+show databases;
+use mysql;
+show tables;
+select * from engine_cost;
+create database mahi_intro;
+show databases;
+create table emp_details(Name varchar(25),Age int,Sex char(1),DOJ date,city varchar(15),salary float);
+describe emp_details;
+
+insert into emp_details
+values("Mahi",20,"M","2023-03-17","KKP",100000),
+("Anki",21,"M","2023-12-16","KKP",150000),
+("Srinu",20,"M","2023-11-24","KKP",200000);
+select * from emp_details;
+
+select distinct city from emp_details;
+
+select sum(salary) from emp_details;
+select avg(salary) from emp_details;
+select count(name) as count_name from emp_details;
+
+select name,age,city from emp_details;
+
+select * from emp_details where age>19;
+
+select * from emp_details where sex="M";
+
+select * from emp_details where city="KKP" or "KKP";
+select * from emp_details where city in ("KKP");
+
+select * from emp_details where DOJ between "16-01-2023" and "2023-11-2023";
+
+select * from emp_details where age>20 and sex="M";
+
+select sex,sum(salary) as total_salary from emp_details group by sex;
+select * from emp_details order by salary desc;
+
+select (10+20) as addition;
+
+select (10-30) as minus; 
+
+select length("Mahi") as size;
+
+select repeat("Mahi",25);
+
+select upper("mahi");
+
+select lower("MAHI");
+
+select curdate();
+
+select day(curdate());
+
+select now();
+
+#String functions 
+
+select upper("india") as upper_case;
+
+select lcase("India") as lower_case;
+
+select character_length("mahendrareddy");
+
+select character_length(Name) as total_len from emp_details;
+
+select concat("India","is","my","country");
+
+select Name,city,concat(Name,"  ",city) from emp_details;
+
+select reverse(Name) from emp_details;
+
+select replace("Orange is a vegetable","vegetable","fruit");
+
+select length("     Mahi         ");
+select length(ltrim("     Mahi         "));
+select length(trim("     Mahi         "));
+
+select position("fruit" in "Orange is a fruit") as name;
+
+select ascii("M");
